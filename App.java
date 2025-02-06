@@ -1,10 +1,8 @@
-import model.Admin;
 import model.Question;
 import serivce.AdminService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -60,7 +58,7 @@ public class App {
                 System.out.println("Enter your answer...");
                 String ans = sc.next();
 
-                if(Arrays.stream(qsn.getOptions()).anyMatch(s -> s.equals(ans))){
+                if(Arrays.asList(qsn.getOptions()).contains(ans)){
                     score++;
                 }
             }
